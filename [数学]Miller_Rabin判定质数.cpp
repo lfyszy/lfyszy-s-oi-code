@@ -1,4 +1,4 @@
-int qmul(int a, int b, int p) {return (a * b - (int)((long double) a / p * b) * p + p) % p;}//O(1)龟速乘
+int qmul(int a, int b, int p) {return (a * b - (int)((long double) a / p * b) * p + p) % p;}
 int qpow(int a, int b, int p) {int res = 1; while(b) {if(b & 1) res = qmul(res, a, p); a = qmul(a, a, p); b >>= 1;} return res;}
 bool miller_rabin(int p)
 {
