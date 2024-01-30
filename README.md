@@ -1,4 +1,4 @@
-# lfyszy‘s oi code
+# lfyszy's oi code
 
 >@lfyszy 的c++算法模板&学习资料
 
@@ -10,7 +10,8 @@ Devcpp Allman码风，微量压行但不影响可读性。
 
 如要克隆请使用如下指令：
 ```
-git clone https://gitlab.com/lfyszy1/lfyszy-s-oi-code.git
+git clone https://github.com/lfyszy/lfyszy-s-oi-code.git
+git clone https://gitee.com/lfyszy/lfyszy-s-oi-code.git //国内访问
 ```
 
 或者点击右方 `code > Download source code > zip` 下载
