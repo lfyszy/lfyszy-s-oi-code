@@ -1,0 +1,1 @@
+int qmul(int a, int b, int p) {return (a * b - (int)((long double) a / p * b) * p + p) % p;}
