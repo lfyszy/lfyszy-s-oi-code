@@ -3,7 +3,7 @@ vector<prime> dip;
 void divide(int n)
 {
     dip.clear();
-    for(int i = 2;i <= n / i; i ++)
+    for(int i = 2; i <= n / i; i ++)
         if(n % i == 0)
         {
             int s = 0;
