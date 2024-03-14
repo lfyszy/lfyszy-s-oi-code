@@ -41,8 +41,8 @@ class segment_tree
         if(l <= tr[u].l && tr[u].r <= r) return /* val */;
         push_down(u);
         int mid = tr[u].l + tr[u].r >> 1, res = 0;
-        if(l <= mid) res = (res /* opt */ query(l(u), l, r)) % m;
-        if(r > mid) res = (res /* opt */ query(r(u), l, r)) % m;
+        if(l <= mid) res = res /* opt */ query(l(u), l, r);
+        if(r > mid) res = res /* opt */ query(r(u), l, r);
         return res;
     }
 } ;
