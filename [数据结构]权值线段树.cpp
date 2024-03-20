@@ -27,4 +27,4 @@ class w_segment_tree
         push_up(u);
     }
     /* query */
-}
+} ;
