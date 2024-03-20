@@ -3,14 +3,13 @@ class segment_tree
     public:
     struct node
     {
-        int l, r;
         // val
         // lazy_tag
     } tr[N << 2];
     #define l(x) x << 1
     #define r(x) x << 1 | 1
     void push_up(int u) {/* modify val */}
-    void push_down(int u)
+    void push_down(int u, int ln, int rn)
     {
         //modify sons' val
         //modify sons' lazy_tag
@@ -22,27 +21,27 @@ class segment_tree
         int mid = l + r >> 1;
         build(l(u), l, mid, a), build(r(u), mid + 1, r, a), push_up(u);
     }
-    void modify(int u, int l, int r, int k)
+    void modify(int u, int l, int r, int ln, int rn, int k)
     {
-        if(l <= tr[u].l && tr[u].r <= r)
+        if(l <= ln && rn <= r)
         {
             //modify val
             //modify lazy_tag
             return ;
         }
         push_down(u);
-        int mid = tr[u].l + tr[u].r >> 1;
-        if(l <= mid) modify(l(u), l, r, k);
-        if(r > mid) modify(r(u), l, r, k);
+        int mid = ln + rn >> 1;
+        if(l <= mid) modify(l(u), l, r, ln, rn, k);
+        if(r > mid) modify(r(u), l, r, ln, rn, k);
         push_up(u);
     }
-    int query(int u, int l ,int r)
+    int query(int u, int l ,int r, int ln, int rn)
     {
-        if(l <= tr[u].l && tr[u].r <= r) return /* val */;
+        if(l <= ln && rn <= r) return /* val */;
         push_down(u);
-        int mid = tr[u].l + tr[u].r >> 1, res = 0;
-        if(l <= mid) res = res /* opt */ query(l(u), l, r);
-        if(r > mid) res = res /* opt */ query(r(u), l, r);
+        int mid = ln + rn >> 1, res = 0;
+        if(l <= mid) res = res /* opt */ query(l(u), l, r, ln, rn);
+        if(r > mid) res = res /* opt */ query(r(u), l, r, ln, rn);
         return res;
     }
 } ;
