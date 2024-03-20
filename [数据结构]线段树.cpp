@@ -31,8 +31,8 @@ class segment_tree
         }
         push_down(u);
         int mid = ln + rn >> 1;
-        if(l <= mid) modify(l(u), l, r, ln, rn, k);
-        if(r > mid) modify(r(u), l, r, ln, rn, k);
+        if(l <= mid) modify(l(u), l, r, ln, mid, k);
+        if(r > mid) modify(r(u), l, r, mid + 1, rn, k);
         push_up(u);
     }
     int query(int u, int l ,int r, int ln, int rn)
@@ -40,8 +40,8 @@ class segment_tree
         if(l <= ln && rn <= r) return /* val */;
         push_down(u);
         int mid = ln + rn >> 1, res = 0;
-        if(l <= mid) res = res /* opt */ query(l(u), l, r, ln, rn);
-        if(r > mid) res = res /* opt */ query(r(u), l, r, ln, rn);
+        if(l <= mid) res = res /* opt */ query(l(u), l, r, ln, mid);
+        if(r > mid) res = res /* opt */ query(r(u), l, r, mid + 1, rn);
         return res;
     }
 } ;
