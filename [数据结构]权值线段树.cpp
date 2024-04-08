@@ -1,5 +1,6 @@
 class w_segment_tree
 {
+    const int N = /* max_num */;
     public:
     int idx;
     struct node
