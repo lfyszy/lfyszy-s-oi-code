@@ -4,7 +4,7 @@ int f[N][30], dfn[N], idx;
 int get(int u, int v) {return dfn[u] < dfn[v] ? u : v;}
 void dfs(int u, int fa)
 {
-    f[dfn[u] = ++ idx][0] = fa, st[u] = 1;
+    f[dfn[u] = ++ idx][0] = fa;
     for(auto v : e[u]) if(v != fa) dfs(v, u);
 }
 void init(int n)
