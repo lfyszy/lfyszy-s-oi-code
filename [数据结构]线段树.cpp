@@ -17,7 +17,7 @@ class segment_tree
     }
     void build(int u, int l, int r, int a[])
     {
-        tr[u] = {l, r, /* val */, /* lazy_tag */};
+        tr[u] = {/* val */, /* lazy_tag */};
         if(l == r) {/* leaf */ return ;}
         int mid = l + r >> 1;
         build(l(u), l, mid, a), build(r(u), mid + 1, r, a), push_up(u);
