@@ -30,7 +30,7 @@ class segment_tree
             //modify lazy_tag
             return ;
         }
-        push_down(u);
+        push_down(u, ln, rn);
         int mid = ln + rn >> 1;
         if(l <= mid) modify(l(u), l, r, ln, mid, k);
         if(r > mid) modify(r(u), l, r, mid + 1, rn, k);
@@ -39,7 +39,7 @@ class segment_tree
     int query(int u, int l ,int r, int ln, int rn)
     {
         if(l <= ln && rn <= r) return /* val */;
-        push_down(u);
+        push_down(u, ln, rn);
         int mid = ln + rn >> 1, res = 0;
         if(l <= mid) res = res /* opt */ query(l(u), l, r, ln, mid);
         if(r > mid) res = res /* opt */ query(r(u), l, r, mid + 1, rn);
