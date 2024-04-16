@@ -1,7 +1,7 @@
 class LCT_son
 {
-    const int N = 1e5 + 10;
     public:
+    const int N = 1e5 + 10;
     struct node {int ch[2], fa; int tot, siz;/* 子树、虚子树大小 */int lazy_rev;} tr[N];
     int getch(int u) {return tr[tr[u].fa].ch[1] == u;}
     void push_up(int u) {tr[u].tot = tr[tr[u].ch[0]].tot + tr[tr[u].ch[1]].tot + tr[u].siz + 1;}

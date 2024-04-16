@@ -1,5 +1,6 @@
 class  kruskal_tree
 {
+    public:
     const int N = /* max_edge_num */, M = /* 2_times_max_point_num */;
     struct edge
     {

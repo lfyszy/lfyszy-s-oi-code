@@ -1,7 +1,7 @@
 class segment_tree
 {
-    const int N = /* max_num */;
     public:
+    const int N = /* max_num */;
     struct node
     {
         // val

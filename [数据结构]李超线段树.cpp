@@ -1,7 +1,7 @@
 class lichao_segment
 {
-    const int N = /* max_num */;
     pubilc:
+    const int N = /* max_num */;
     const double eps = 1e-9;
     int cmp(double x, double y) {return x - y > eps ? 1 : y - x > eps ? -1 : 0;}
     struct line {double k, b;} p[N << 2];

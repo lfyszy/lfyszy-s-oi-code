@@ -1,7 +1,7 @@
 class LCT
 {
+    public:
     const int N = 1e5 + 10;
-    pubilc:
     struct node {int /* val */, ch[2], fa, lazy_rev/* lazytag */;} tr[N];
     int getch(int x) {return tr[tr[x].fa].ch[1] == x;}
     void pushup(int x) {/* modify val */}
